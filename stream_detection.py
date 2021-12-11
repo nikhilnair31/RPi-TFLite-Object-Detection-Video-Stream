@@ -69,7 +69,8 @@ def detect_motion():
         frame_rate_calc= 1/time1
         
         with lock:
-            outputFrame = frame.copy()
+            flipframe = cv2.flip(frame, 1)
+            outputFrame = flipframe.copy()
 
 def generate():
     global outputFrame, lock
